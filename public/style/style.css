@@ -1,0 +1,93 @@
+/* Importações */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/* Fim de Importações */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+menu nav div a {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+main {
+    display: flex; /* Para alinhar a menulateral e o conteudo lado a lado */
+    width: 100%;
+    height: 100vh;
+}
+
+.menulateral {
+    display: flex;
+    flex-direction: column;
+    background-color: #5e9fff;
+    width: 300px; /* Largura fixa da barra lateral */
+    height: 100vh;
+    text-align: center;
+}
+
+.menulateral img {
+    border: 2px solid white;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 0;
+    width: 150px;
+    border-radius: 100%;
+}
+
+.menulateral a {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-decoration: none;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 7px;
+    width: 240px;
+    color: white; /* Para garantir que o texto do link seja visível */
+}
+
+.menulateral a:hover{
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.conteudo {
+    flex-grow: 1; /* Faz a div.conteudo ocupar o restante do espaço */
+    padding: 20px; /* Adiciona espaçamento interno */
+    background-color: #f9f9f9; /* Cor de fundo clara para contraste com o texto */
+    color: black; /* Cor do texto */
+    overflow-y: auto; /* Permite rolagem vertical caso o conteúdo ultrapasse o tamanho da tela */
+}
+
+/* Estilização adicional para a parte interna do formulário */
+.conteudo h1 {
+    text-align: center;
+    color: #0d6efd;
+}
+
+.form-group label {
+    color: #0d6efd; /* Cor do texto dos rótulos */
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Cor de hover para o botão de envio */
+}

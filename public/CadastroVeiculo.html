@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vehicleData</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+    <header>
+        <menu>
+            <nav class="navbar navbar-expand-lg navbar bg-primary" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Teste</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#">Pricing</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </menu>
+    </header>
+
+    <main>
+        <div class="menulateral">
+            <img src="img/logo.png" alt="Logo" />
+            <a class="" href="#">Cadastro de veículos</a>
+            <a href="#">Editar veículos cadastrados</a>
+            <a href="#">Consulta de veículos</a>
+            <a href="#">Sair</a>
+        </div>
+
+        
+        <div class="conteudo">
+            <div class="container mt-5">
+                <h1 class="mb-4 text-center">Cadastro de Veículo</h1>
+                <form id="vehicleForm" action="/cadastro" method="POST">
+                    <!-- Nome do Veículo -->
+                    <div class="form-group">
+                        <label for="nomeVeiculo">Nome do Veículo</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="nome"
+                            name="nome"
+                            placeholder="Ex: Honda Civic"
+                            required
+                        />
+                    </div>
+                
+                    <!-- Marca -->
+                    <div class="form-group">
+                        <label for="marcaVeiculo">Marca</label>
+                        <select class="form-control" id="marca" name="marca" required>
+                            <option value="">Selecione a Marca</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                        </select>
+                    </div>
+                
+                    <!-- Ano -->
+                    <div class="form-group">
+                        <label for="anoVeiculo">Ano</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="ano"
+                            name="ano"
+                            placeholder="Ex: 2020"
+                            min="1980"
+                            max="2024"
+                            required
+                        />
+                    </div>
+                
+                    <!-- Quilometragem -->
+                    <div class="form-group">
+                        <label for="quilometragemVeiculo">Quilometragem (Km)</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="quilometragemVeiculo"
+                            name="quilometragem"
+                            placeholder="Ex: 50000"
+                            min="0"
+                            required
+                        />
+                    </div>
+                
+                    <!-- Preço -->
+                    <div class="form-group">
+                        <label for="precoVeiculo">Preço (R$)</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="precoVeiculo"
+                            name="preco"
+                            placeholder="Ex: 45000"
+                            min="0"
+                            step="0.01"
+                            required
+                        />
+                    </div>
+                
+                    <!-- Combustível -->
+                    <div class="form-group">
+                        <label for="combustivelVeiculo">Tipo de Combustível</label>
+                        <select class="form-control" id="combustivelVeiculo" name="combustivel" required>
+                            <option value="">Selecione o Combustível</option>
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Etanol">Etanol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Flex">Flex</option>
+                        </select>
+                    </div>
+                
+                    <!-- Condição do Veículo -->
+                    <div class="form-group">
+                        <label for="condicaoVeiculo">Condição do Veículo</label>
+                        <select class="form-control" id="condicaoVeiculo" name="condicao" required>
+                            <option value="">Selecione a Condição</option>
+                            <option value="Novo">Novo</option>
+                            <option value="Semi Novo">Semi Novo</option>
+                            <option value="Usado">Usado</option>
+                        </select>
+                    </div>
+                
+                    <!-- Câmbio -->
+                    <div class="form-group">
+                        <label for="cambioVeiculo">Câmbio</label>
+                        <select class="form-control" id="cambioVeiculo" name="cambio" required>
+                            <option value="">Selecione o Câmbio</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Automático">Automático</option>
+                            <option value="Semi-Automático">Semi-Automático</option>
+                        </select>
+                    </div>
+                
+                    <!-- Carroceria -->
+                    <div class="form-group">
+                        <label for="carroceriaVeiculo">Carroceria</label>
+                        <select class="form-control" id="carroceriaVeiculo" name="carroceria" required>
+                            <option value="">Selecione a Carroceria</option>
+                            <option value="Sedã">Sedã</option>
+                            <option value="Hatch">Hatch</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Crossover">Crossover</option>
+                            <option value="Pick-up">Pick-up</option>
+                            <option value="Furgão">Furgão</option>
+                        </select>
+                    </div>
+                
+                    <!-- Final de Placa -->
+                    <div class="form-group">
+                        <label for="finalPlaca">Final de Placa</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="finalPlaca"
+                            name="finalPlaca"
+                            placeholder="Ex: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0"
+                            required
+                        />
+                    </div>
+                
+                    <!-- Cor -->
+                    <div class="form-group">
+                        <label for="corVeiculo">Cor</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="corVeiculo"
+                            name="cor"
+                            placeholder="Ex: Preto, Branco, Vermelho"
+                            required
+                        />
+                    </div>
+                
+                    <!-- Aceita Troca -->
+                    <div class="form-group">
+                        <label>Aceita Troca?</label>
+                        <select class="form-control" id="aceitaTroca" name="aceitaTroca" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                
+                    <!-- Revisões pela Agência -->
+                    <div class="form-group">
+                        <label>Revisões pela Agência?</label>
+                        <select class="form-control" id="revisoesAgencia" name="revisoesAgencia" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                
+                    <!-- Único Dono -->
+                    <div class="form-group">
+                        <label>Único Dono?</label>
+                        <select class="form-control" id="unicoDono" name="unicoDono" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                
+                    <!-- Revisões pela Concessionária -->
+                    <div class="form-group">
+                        <label>Revisões pela Concessionária?</label>
+                        <select class="form-control" id="revisoesConcessionaria" name="revisoesConcessionaria" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                
+                    <!-- IPVA Pago -->
+                    <div class="form-group">
+                        <label>IPVA Pago?</label>
+                        <select class="form-control" id="ipvaPago" name="ipvaPago" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                
+                    <!-- Licenciado -->
+                    <div class="form-group">
+                        <label>Licenciado?</label>
+                        <select class="form-control" id="licenciado" name="licenciado" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                
+                    <!-- Garantia de Fábrica -->
+                    <div class="form-group">
+                        <label>Garantia de Fábrica?</label>
+                        <select class="form-control" id="garantiaFabrica" name="garantiaFabrica" required>
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                
+                    <!-- Descrição -->
+                    <div class="form-group">
+                        <label for="descricaoVeiculo">Descrição</label>
+                        <textarea
+                            class="form-control"
+                            id="descricaoVeiculo"
+                            name="descricao"
+                            rows="4"
+                            placeholder="Escreva uma descrição detalhada do veículo"
+                        ></textarea>
+                    </div>
+                
+                    <!-- Imagem do Veículo -->
+                    <div class="form-group">
+                        <label for="imagemVeiculo">Imagem do Veículo</label>
+                        <input
+                            type="file"
+                            class="form-control"
+                            id="imagemVeiculo"
+                            name="imagem"
+                            accept="image/*"
+                            multiple
+                            required
+                        />
+                        <div id="thumbnailContainer" class="mt-2"></div>
+                    </div>
+                
+                    <!-- Botão de Cadastro -->
+                    <button type="submit" class="btn btn-primary mt-4">Cadastrar</button>
+                </form>
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybhrlxyU0D8e1ZpD2M1H7BpeREdy6D6cl7obDNmK5j0tVxI2g" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-NP6nqikJof8nG6jYgB5bpbKpboL8tD6NkRAI0m9i+3xLvD7s0Q42I3xk2OBbT1Hp" crossorigin="anonymous"></script>
+</body>
+</html>
